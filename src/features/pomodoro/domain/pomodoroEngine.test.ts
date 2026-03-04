@@ -16,7 +16,7 @@ describe("Pomodoro Engine", () => {
   })
 
   it("should keep alternating sessions", () => {
-    let session = "focus"
+    let session: "focus" | "break" = "focus"
 
     session = getNextSession(session)
     expect(session).toBe("break")
