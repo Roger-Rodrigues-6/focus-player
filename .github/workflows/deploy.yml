@@ -24,11 +24,12 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Deploy to Hostinger via SFTP
+        uses: appleboy/scp-action@v0.1.7
         with:
-          server: ftp.siteweb.dev.br
+          host: siteweb.dev.br
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
-          local-dir: dist/
-          server-dir: public_html/projetos/focus-player/
+          port: 22
+          source: "dist/*"
+          target: "/home/u421819405/domains/siteweb.dev.br/public_html/projetos/focus-player"
