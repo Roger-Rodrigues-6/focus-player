@@ -2,6 +2,7 @@ import { useState } from "react"
 import { usePomodoro } from "./features/pomodoro/hooks/usePomodoro"
 import { TimerDisplay } from "./features/pomodoro/components/TimerDisplay"
 import { Controls } from "./features/pomodoro/components/Controls"
+import { YouTubePlayer } from "./features/youtube/components/YouTubePlayer"
 
 function App() {
   const {
@@ -127,7 +128,10 @@ function App() {
         {/* Player Placeholder */}
         <div className="mt-10 rounded-xl overflow-hidden">
           <div className="aspect-video bg-zinc-800 flex items-center justify-center text-sm opacity-40">
-            YouTube Player
+            <YouTubePlayer
+              url={session === "focus" ? focusUrl : breakUrl}
+              shouldPlay={isRunning}
+            />
           </div>
         </div>
 
