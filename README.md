@@ -1,74 +1,85 @@
-# React + TypeScript + Vite
+# Focus Player — Pomodoro Timer + YouTube Player
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimalist productivity app built with **React + TypeScript** that integrates the **Pomodoro technique with YouTube playlists** to help maintain focus during work or study sessions.
 
-Currently, two official plugins are available:
+## Motivation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+While studying React and improving my frontend architecture skills, I wanted to build a **real productivity tool that I would actually use daily**.
 
-## React Compiler
+I noticed that during focused work sessions I often switch between timers and background music videos. This project combines both into a **single minimal interface designed for deep focus**.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The goal of this project was not only to create a functional tool, but also to **practice modern React architecture, clean code principles, and testing**.
 
-## Expanding the ESLint configuration
+## Live Demo
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+https://siteweb.dev.br/projetos/focus-player/
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Features
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+* Pomodoro timer with focus and break sessions
+* YouTube video or playlist integration
+* Separate playlists for **focus** and **break**
+* Start / Pause / Reset controls
+* Minimalist mobile-first UI
+* Automatic session switching
+* Adjustable Pomodoro durations
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Preview
+
+![Focus Player](preview.png)
+
+## Tech Stack
+
+* React
+* TypeScript
+* Vite
+* TailwindCSS
+* Vitest (unit tests)
+* YouTube Iframe API
+
+## Architecture
+
+The project was structured following **feature-based architecture**, keeping domain logic separated from UI components.
+
+```
+src/
+  features/
+    pomodoro/
+      domain/
+      hooks/
+      components/
+    youtube/
+      hooks/
+      components/
+      utils/
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Concepts applied:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+* Feature-based architecture
+* Separation of domain logic
+* Custom React hooks
+* Clean code principles
+* Unit testing for business logic
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-"# focus-player" 
+## What I practiced in this project
+
+* React architecture organization
+* Custom hooks
+* External API integration
+* Component design
+* State management
+* Unit testing
+* CI/CD experimentation
+* Production deployment
+
+## Future Improvements
+
+* Save playlists in localStorage
+* Session history
+* Dark/light mode
+* Statistics dashboard
+
+---
+
+This project is part of my journey studying **modern React development and frontend architecture**.
